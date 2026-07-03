@@ -28,7 +28,7 @@ else
 	fi
 
 	"$PYTHON_BIN" -m pip install --upgrade pip
-	"$PYTHON_BIN" -m pip install "pystache>=0.6.8" "sw-metadata-bot>=0.4.1"
+	"$PYTHON_BIN" -m pip install -e
 fi
 
 if [ "$USE_UV" = true ]; then
