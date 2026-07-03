@@ -44,11 +44,11 @@
     "generate_codemeta_if_missing": true
   },
   "issues": {
-    "custom_message": "You are part of the Software Understanding metadata quality initiative beta analysis. This initiative is meant to test the use of a bot to monitor the quality of metadata in software repositories.",
+    "custom_issue_message": "You are part of the Software Understanding metadata quality initiative beta analysis. This initiative is meant to test the use of a bot to monitor the quality of metadata in software repositories.",
     "opt_outs": []
   },
   "outputs": {
-    "root_dir": "outputs",
+    "output_root_dir": "outputs",
     "run_name": "SoftwareUnderstanding",
     "snapshot_tag_format": "%Y%m%d"
   }
