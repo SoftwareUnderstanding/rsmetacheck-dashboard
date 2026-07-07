@@ -1,0 +1,9 @@
+{
+  "status": "missing",
+  "missing": true,
+  "generated": true,
+  "generate_if_missing": true,
+  "source": "somef_output.json",
+  "reason": "not_detected_in_somef_sources",
+  "generated_file": "codemeta_generated.json"
+}

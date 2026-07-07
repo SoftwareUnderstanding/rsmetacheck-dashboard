@@ -1,0 +1,48 @@
+{
+  "run_metadata": {
+    "generated_at": "2026-07-06T14:15:31Z",
+    "dry_run": true,
+    "analysis_summary_file": "/home/francois/repos/github.com/codemetasoft/sw-metadata-bot-monitor-web/outputs/SoftwareUnderstanding/20260706/analysis_results.json",
+    "previous_report_source": "/home/francois/repos/github.com/codemetasoft/sw-metadata-bot-monitor-web/outputs/SoftwareUnderstanding/20260703/run_report.json",
+    "input_config_file": null
+  },
+  "counters": {
+    "total": 1,
+    "created": 0,
+    "simulated": 0,
+    "updated_by_comment": 0,
+    "closed": 0,
+    "skipped": 1,
+    "failed": 0
+  },
+  "records": [
+    {
+      "repo_url": "https://github.com/SoftwareUnderstanding/somef_server",
+      "platform": "github",
+      "pitfalls_count": 1,
+      "warnings_count": 1,
+      "issue_url": null,
+      "analysis_date": "2026-04-27T12:35:05Z",
+      "sw_metadata_bot_version": "0.5.3",
+      "rsmetacheck_version": "0.2.1",
+      "pitfalls_ids": [
+        "P002"
+      ],
+      "warnings_ids": [
+        "W002"
+      ],
+      "action": "skipped",
+      "reason_code": "repo_not_updated",
+      "previous_issue_url": "https://github.com/SoftwareUnderstanding/somef_server/issues/4",
+      "findings_signature": "P002|W002",
+      "current_commit_id": "b9d7b7a276fd7b062121839cd15eb658d3a40a2e",
+      "previous_commit_id": "b9d7b7a276fd7b062121839cd15eb658d3a40a2e",
+      "dry_run": true,
+      "issue_persistence": "none",
+      "codemeta_generated": false,
+      "codemeta_status": "present",
+      "file": "/home/francois/repos/github.com/codemetasoft/sw-metadata-bot-monitor-web/outputs/SoftwareUnderstanding/20260706/github_com_softwareunderstanding_somef_server/pitfall.jsonld",
+      "unsubscribe_detected": false
+    }
+  ]
+}

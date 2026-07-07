@@ -1,0 +1,49 @@
+{
+  "run_metadata": {
+    "generated_at": "2026-07-06T14:15:45Z",
+    "dry_run": true,
+    "analysis_summary_file": "/home/francois/repos/github.com/codemetasoft/sw-metadata-bot-monitor-web/outputs/SoftwareUnderstanding/20260706/analysis_results.json",
+    "previous_report_source": "/home/francois/repos/github.com/codemetasoft/sw-metadata-bot-monitor-web/outputs/SoftwareUnderstanding/20260703/run_report.json",
+    "input_config_file": null
+  },
+  "counters": {
+    "total": 1,
+    "created": 0,
+    "simulated": 0,
+    "updated_by_comment": 1,
+    "closed": 0,
+    "skipped": 0,
+    "failed": 0
+  },
+  "records": [
+    {
+      "repo_url": "https://github.com/SoftwareUnderstanding/SOMEF-Vider",
+      "platform": "github",
+      "pitfalls_count": 2,
+      "warnings_count": 1,
+      "issue_url": "https://github.com/SoftwareUnderstanding/SOMEF-Vider/issues/82",
+      "analysis_date": "2026-07-06T14:15:45Z",
+      "sw_metadata_bot_version": "0.5.3",
+      "rsmetacheck_version": "0.3.3",
+      "pitfalls_ids": [
+        "P001",
+        "P017"
+      ],
+      "warnings_ids": [
+        "W002"
+      ],
+      "action": "updated_by_comment",
+      "reason_code": "changed_and_issue_open",
+      "previous_issue_url": "https://github.com/SoftwareUnderstanding/SOMEF-Vider/issues/82",
+      "findings_signature": "P001|P017|W002",
+      "current_commit_id": "b18b12870ab8afdc69d3cc436683717b901da2d6",
+      "previous_commit_id": "f41670e6e17a4026372d4ebd1c3336c32ebdca5d",
+      "dry_run": true,
+      "issue_persistence": "simulated",
+      "codemeta_generated": false,
+      "codemeta_status": "present",
+      "file": "/home/francois/repos/github.com/codemetasoft/sw-metadata-bot-monitor-web/outputs/SoftwareUnderstanding/20260706/github_com_softwareunderstanding_somef_vider/pitfall.jsonld",
+      "unsubscribe_detected": false
+    }
+  ]
+}

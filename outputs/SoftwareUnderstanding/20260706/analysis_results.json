@@ -1,0 +1,151 @@
+{
+  "generated_at": "2026-07-06T14:16:55Z",
+  "summary": {
+    "evaluated_repositories": {
+      "github_com_softwareunderstanding_arxiv_category_pull": {
+        "url": "https://github.com/SoftwareUnderstanding/arxiv_category_pull",
+        "commit_id": "d56cf463f3744d9e7801f7ce63f8d0e08655cadc"
+      },
+      "github_com_softwareunderstanding_codemetasoft_website": {
+        "url": "https://github.com/SoftwareUnderstanding/CodeMetaSoft_website",
+        "commit_id": "ebef09ae075974c32399bed63ec3912d605d7c46"
+      },
+      "github_com_softwareunderstanding_metadata_adoption_quantify": {
+        "url": "https://github.com/SoftwareUnderstanding/Metadata-Adoption-Quantify",
+        "commit_id": "cabdfe9a70124a3cb7233107ca51bad343759df4"
+      },
+      "github_com_softwareunderstanding_scientificsoftwarekg": {
+        "url": "https://github.com/SoftwareUnderstanding/ScientificSoftwareKG",
+        "commit_id": "962da14cd629eb6a0363e70f56a92cc07aab21e0"
+      },
+      "github_com_softwareunderstanding_somef_server": {
+        "url": "https://github.com/SoftwareUnderstanding/somef_server",
+        "commit_id": "b9d7b7a276fd7b062121839cd15eb658d3a40a2e"
+      },
+      "github_com_softwareunderstanding_inspect4py": {
+        "url": "https://github.com/SoftwareUnderstanding/inspect4py",
+        "commit_id": "96dc151837623ed676deebc596734267aa8d855e"
+      },
+      "github_com_softwareunderstanding_somef_vider": {
+        "url": "https://github.com/SoftwareUnderstanding/SOMEF-Vider",
+        "commit_id": "b18b12870ab8afdc69d3cc436683717b901da2d6"
+      },
+      "github_com_softwareunderstanding_completer": {
+        "url": "https://github.com/SoftwareUnderstanding/completeR",
+        "commit_id": "341b1ceced308b6d93b2f6107f90fd468a3d26ed"
+      },
+      "github_com_softwareunderstanding_software_types": {
+        "url": "https://github.com/SoftwareUnderstanding/software_types",
+        "commit_id": "a2c40586c603f92019eae85f39ee6af2f2e1c1ba"
+      },
+      "github_com_softwareunderstanding_c2t": {
+        "url": "https://github.com/SoftwareUnderstanding/c2t",
+        "commit_id": "438de34bd9682abfc292bf7bc3e514a6c7f79e6e"
+      },
+      "github_com_softwareunderstanding_sw_metadata_bot": {
+        "url": "https://github.com/SoftwareUnderstanding/sw-metadata-bot/",
+        "commit_id": "f0dbb96addffa26a02bacfbcfd408d5639f9d1e0"
+      },
+      "github_com_softwareunderstanding_rsmetacheck": {
+        "url": "https://github.com/SoftwareUnderstanding/RsMetaCheck",
+        "commit_id": "f4767ec984389598c30582328125c90f32528a6b"
+      },
+      "github_com_ctlearn_project_ctlearn": {
+        "url": "https://github.com/ctlearn-project/ctlearn",
+        "commit_id": "05504a8492260a19652375503f2e8c3f201ee3a8"
+      },
+      "github_com_amiga_iaa_hcg_16": {
+        "url": "https://github.com/AMIGA-IAA/hcg-16",
+        "commit_id": "3e46b026f96b30c4b7d69546720bdb9debb07f99"
+      },
+      "github_com_cosimonigro_agnpy": {
+        "url": "https://github.com/cosimoNigro/agnpy",
+        "commit_id": "a218634e145c146b22c43344adb0e02e235f945f"
+      },
+      "github_com_gammapy_gammapy": {
+        "url": "https://github.com/gammapy/gammapy",
+        "commit_id": "68f731591621af08523297c76d199c8371cc20c9"
+      },
+      "gitlab_in2p3_fr_escape2020_wp3_template_project_escape": {
+        "url": "https://gitlab.in2p3.fr/escape2020/wp3/template_project_escape",
+        "commit_id": "86dcebc7cd006c83aa4a763d9982f8eef3634fea"
+      },
+      "github_com_fairrootgroup_fairmq": {
+        "url": "https://github.com/FairRootGroup/FairMQ/",
+        "commit_id": "a34fa64dc1cc2bd5efd11f0946974c9ff6d75c84"
+      },
+      "github_com_cds_astro_cds_moc_rust": {
+        "url": "https://github.com/cds-astro/cds-moc-rust",
+        "commit_id": "7f870c0a4b7b377a09c2275ffbba49ca6f07d206"
+      },
+      "gitlab_in2p3_fr_gammalearn_gammalearn": {
+        "url": "https://gitlab.in2p3.fr/gammalearn/gammalearn",
+        "commit_id": "0d907cd5f74bcd73b8aff969232ec2d4985393a4"
+      },
+      "gitlab_in2p3_fr_christopher_eckner_mlfermilatdwarfs": {
+        "url": "https://gitlab.in2p3.fr/christopher.eckner/mlfermilatdwarfs/",
+        "commit_id": "d690a5a62a8a466b2c966864662cc9480fcf5cd3"
+      },
+      "github_com_cds_astro_mocpy": {
+        "url": "https://github.com/cds-astro/mocpy",
+        "commit_id": "c28c8f66f402a4ec96ae169d027696d05fe71d9d"
+      },
+      "gitlab_in2p3_fr_gammalearn_publications_2025_stereograph": {
+        "url": "https://gitlab.in2p3.fr/gammalearn/publications/2025-stereograph",
+        "commit_id": "767e953a1fa20b16b5132ecfc39beda35f01b57e"
+      },
+      "github_com_indexedconv_indexedconv": {
+        "url": "https://github.com/IndexedConv/IndexedConv",
+        "commit_id": "e6fec1718be08d00be5ebc8b548a4ec9081f9a52"
+      },
+      "github_com_r3brootgroup_r3broot": {
+        "url": "https://github.com/R3BRootGroup/R3BRoot",
+        "commit_id": "4e4e48dfc563141f3c337ff07a117e95b8504f9c"
+      },
+      "github_com_cds_astro_aladin_lite": {
+        "url": "https://github.com/cds-astro/aladin-lite",
+        "commit_id": "60c5cf414d6d56a10b406761e62e8c2ce9f2a760"
+      },
+      "gitlab_com_escape_ossr_eossr": {
+        "url": "https://gitlab.com/escape-ossr/eossr",
+        "commit_id": "0364382726912d1c483d0d5462bfcfe8a36307e0"
+      },
+      "gitlab_desy_de_jannisnecker_timewise_sup": {
+        "url": "https://gitlab.desy.de/jannisnecker/timewise_sup",
+        "commit_id": "89bfe9b93ed759e2d4504c1ec3164185c6bf6711"
+      },
+      "gitlab_in2p3_fr_cta_lapp_rta_hiperta": {
+        "url": "https://gitlab.in2p3.fr/CTA-LAPP/rta/hiperta",
+        "commit_id": "755ea1965afe7d3acec07f064db298ffe6482f5e"
+      },
+      "gitlab_in2p3_fr_escape2020_wp3_ossr_curation": {
+        "url": "https://gitlab.in2p3.fr/escape2020/wp3/ossr-curation",
+        "commit_id": "e31194553410ffa2c7a32b0699602e794a31b272"
+      },
+      "gitlab_com_ska_telescope_sdc_sdc1_solution": {
+        "url": "https://gitlab.com/ska-telescope/sdc/sdc1-solution",
+        "commit_id": "ae8fc3e09f2fe613b6768d847c4b4d42e9cdf9b5"
+      },
+      "github_com_explore_platform_g_tomo": {
+        "url": "https://github.com/explore-platform/g-tomo",
+        "commit_id": "f9a47d1dd5038fa02e2056ad284870dc23b6c321"
+      },
+      "github_com_cds_astro_tutorials": {
+        "url": "https://github.com/cds-astro/tutorials",
+        "commit_id": "3b70268792f425579cf166bebf88eac021905a50"
+      },
+      "github_com_javierrico_glike": {
+        "url": "https://github.com/javierrico/gLike",
+        "commit_id": "6c89dcd25351a970787b76ef84b0b57eeaf723f1"
+      },
+      "gitlab_in2p3_fr_escape2020_wp3_zenodoci": {
+        "url": "https://gitlab.in2p3.fr/escape2020/wp3/zenodoci",
+        "commit_id": "a1969df01027df23b89d1447cead167b1bc4141d"
+      },
+      "github_com_aardk_jupyter_casa": {
+        "url": "https://github.com/aardk/jupyter-casa",
+        "commit_id": "d3b2babfc05dbbb474e2f4b2db9ca67c270a035c"
+      }
+    }
+  }
+}

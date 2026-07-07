@@ -1,0 +1,42 @@
+{
+  "run_metadata": {
+    "generated_at": "2026-07-06T14:16:48Z",
+    "dry_run": true,
+    "analysis_summary_file": "/home/francois/repos/github.com/codemetasoft/sw-metadata-bot-monitor-web/outputs/SoftwareUnderstanding/20260706/analysis_results.json",
+    "previous_report_source": "/home/francois/repos/github.com/codemetasoft/sw-metadata-bot-monitor-web/outputs/SoftwareUnderstanding/20260703/run_report.json",
+    "input_config_file": null
+  },
+  "counters": {
+    "total": 1,
+    "created": 0,
+    "simulated": 1,
+    "updated_by_comment": 0,
+    "closed": 0,
+    "skipped": 0,
+    "failed": 0
+  },
+  "records": [
+    {
+      "repo_url": "Unknown",
+      "platform": null,
+      "pitfalls_count": 0,
+      "warnings_count": 0,
+      "issue_url": null,
+      "analysis_date": "2026-07-06T14:16:48Z",
+      "sw_metadata_bot_version": "0.5.3",
+      "rsmetacheck_version": "0.3.3",
+      "pitfalls_ids": [],
+      "warnings_ids": [],
+      "action": "simulated_created",
+      "reason_code": "missing_codemeta",
+      "findings_signature": "",
+      "current_commit_id": "89bfe9b93ed759e2d4504c1ec3164185c6bf6711",
+      "dry_run": true,
+      "issue_persistence": "simulated",
+      "codemeta_generated": true,
+      "codemeta_status": "missing",
+      "file": "/home/francois/repos/github.com/codemetasoft/sw-metadata-bot-monitor-web/outputs/SoftwareUnderstanding/20260706/gitlab_desy_de_jannisnecker_timewise_sup/pitfall.jsonld",
+      "unsubscribe_detected": false
+    }
+  ]
+}

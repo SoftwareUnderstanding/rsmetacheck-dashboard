@@ -1,0 +1,49 @@
+{
+  "run_metadata": {
+    "generated_at": "2026-07-06T14:16:36Z",
+    "dry_run": true,
+    "analysis_summary_file": "/home/francois/repos/github.com/codemetasoft/sw-metadata-bot-monitor-web/outputs/SoftwareUnderstanding/20260706/analysis_results.json",
+    "previous_report_source": "/home/francois/repos/github.com/codemetasoft/sw-metadata-bot-monitor-web/outputs/SoftwareUnderstanding/20260703/run_report.json",
+    "input_config_file": null
+  },
+  "counters": {
+    "total": 1,
+    "created": 0,
+    "simulated": 1,
+    "updated_by_comment": 0,
+    "closed": 0,
+    "skipped": 0,
+    "failed": 0
+  },
+  "records": [
+    {
+      "repo_url": "https://github.com/gammapy/gammapy",
+      "platform": "github",
+      "pitfalls_count": 2,
+      "warnings_count": 2,
+      "issue_url": null,
+      "analysis_date": "2026-07-06T14:16:13Z",
+      "sw_metadata_bot_version": "0.5.3",
+      "rsmetacheck_version": "0.3.3",
+      "pitfalls_ids": [
+        "P001",
+        "P004"
+      ],
+      "warnings_ids": [
+        "W001",
+        "W002"
+      ],
+      "action": "simulated_created",
+      "reason_code": "changed_and_issue_closed",
+      "findings_signature": "P001|P004|W001|W002",
+      "current_commit_id": "68f731591621af08523297c76d199c8371cc20c9",
+      "previous_commit_id": "7f526461fa73776ef51b5440a93c50e884c4f4ca",
+      "dry_run": true,
+      "issue_persistence": "simulated",
+      "codemeta_generated": false,
+      "codemeta_status": "present",
+      "file": "/home/francois/repos/github.com/codemetasoft/sw-metadata-bot-monitor-web/outputs/SoftwareUnderstanding/20260706/github_com_gammapy_gammapy/pitfall.jsonld",
+      "unsubscribe_detected": false
+    }
+  ]
+}

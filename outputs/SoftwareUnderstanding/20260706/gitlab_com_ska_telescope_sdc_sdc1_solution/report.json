@@ -1,0 +1,48 @@
+{
+  "run_metadata": {
+    "generated_at": "2026-07-06T14:16:51Z",
+    "dry_run": true,
+    "analysis_summary_file": "/home/francois/repos/github.com/codemetasoft/sw-metadata-bot-monitor-web/outputs/SoftwareUnderstanding/20260706/analysis_results.json",
+    "previous_report_source": "/home/francois/repos/github.com/codemetasoft/sw-metadata-bot-monitor-web/outputs/SoftwareUnderstanding/20260703/run_report.json",
+    "input_config_file": null
+  },
+  "counters": {
+    "total": 1,
+    "created": 0,
+    "simulated": 0,
+    "updated_by_comment": 0,
+    "closed": 0,
+    "skipped": 1,
+    "failed": 0
+  },
+  "records": [
+    {
+      "repo_url": "https://gitlab.com/ska-telescope/sdc/sdc1-solution",
+      "platform": "gitlab",
+      "pitfalls_count": 1,
+      "warnings_count": 2,
+      "issue_url": null,
+      "analysis_date": "2026-05-22T06:09:48Z",
+      "sw_metadata_bot_version": "0.5.3",
+      "rsmetacheck_version": "0.3.1",
+      "pitfalls_ids": [
+        "P011"
+      ],
+      "warnings_ids": [
+        "W001",
+        "W004"
+      ],
+      "action": "skipped",
+      "reason_code": "repo_not_updated",
+      "findings_signature": "P011|W001|W004",
+      "current_commit_id": "ae8fc3e09f2fe613b6768d847c4b4d42e9cdf9b5",
+      "previous_commit_id": "ae8fc3e09f2fe613b6768d847c4b4d42e9cdf9b5",
+      "dry_run": true,
+      "issue_persistence": "none",
+      "codemeta_generated": false,
+      "codemeta_status": "present",
+      "file": "/home/francois/repos/github.com/codemetasoft/sw-metadata-bot-monitor-web/outputs/SoftwareUnderstanding/20260706/gitlab_com_ska_telescope_sdc_sdc1_solution/pitfall.jsonld",
+      "unsubscribe_detected": false
+    }
+  ]
+}
