@@ -1,0 +1,49 @@
+{
+  "run_metadata": {
+    "generated_at": "2026-07-03T14:46:56Z",
+    "dry_run": true,
+    "analysis_summary_file": "/home/francois/repos/github.com/codemetasoft/sw-metadata-bot-monitor-web/outputs/SoftwareUnderstanding/20260703/analysis_results.json",
+    "previous_report_source": "/home/francois/repos/github.com/codemetasoft/sw-metadata-bot-monitor-web/outputs/SoftwareUnderstanding/20260522/run_report.json",
+    "input_config_file": null
+  },
+  "counters": {
+    "total": 1,
+    "created": 0,
+    "simulated": 0,
+    "updated_by_comment": 0,
+    "closed": 0,
+    "skipped": 1,
+    "failed": 0
+  },
+  "records": [
+    {
+      "repo_url": "https://github.com/aardk/jupyter-casa",
+      "platform": "github",
+      "pitfalls_count": 0,
+      "warnings_count": 4,
+      "issue_url": null,
+      "analysis_date": "2026-05-22T06:11:38Z",
+      "sw_metadata_bot_version": "0.5.2",
+      "rsmetacheck_version": "0.3.1",
+      "pitfalls_ids": [],
+      "warnings_ids": [
+        "W001",
+        "W002",
+        "W004",
+        "W005"
+      ],
+      "action": "skipped",
+      "reason_code": "repo_not_updated",
+      "previous_issue_url": "https://github.com/aardk/jupyter-casa/issues/13",
+      "findings_signature": "W001|W002|W004|W005",
+      "current_commit_id": "d3b2babfc05dbbb474e2f4b2db9ca67c270a035c",
+      "previous_commit_id": "d3b2babfc05dbbb474e2f4b2db9ca67c270a035c",
+      "dry_run": true,
+      "issue_persistence": "none",
+      "codemeta_generated": false,
+      "codemeta_status": "present",
+      "file": "/home/francois/repos/github.com/codemetasoft/sw-metadata-bot-monitor-web/outputs/SoftwareUnderstanding/20260703/github_com_aardk_jupyter_casa/pitfall.jsonld",
+      "unsubscribe_detected": false
+    }
+  ]
+}

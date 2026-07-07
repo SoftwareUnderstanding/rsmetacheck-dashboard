@@ -1,0 +1,51 @@
+{
+  "run_metadata": {
+    "generated_at": "2026-07-03T14:46:03Z",
+    "dry_run": true,
+    "analysis_summary_file": "/home/francois/repos/github.com/codemetasoft/sw-metadata-bot-monitor-web/outputs/SoftwareUnderstanding/20260703/analysis_results.json",
+    "previous_report_source": "/home/francois/repos/github.com/codemetasoft/sw-metadata-bot-monitor-web/outputs/SoftwareUnderstanding/20260522/run_report.json",
+    "input_config_file": null
+  },
+  "counters": {
+    "total": 1,
+    "created": 0,
+    "simulated": 0,
+    "updated_by_comment": 0,
+    "closed": 0,
+    "skipped": 1,
+    "failed": 0
+  },
+  "records": [
+    {
+      "repo_url": "https://github.com/AMIGA-IAA/hcg-16",
+      "platform": "github",
+      "pitfalls_count": 2,
+      "warnings_count": 3,
+      "issue_url": null,
+      "analysis_date": "2026-05-22T06:03:27Z",
+      "sw_metadata_bot_version": "0.5.2",
+      "rsmetacheck_version": "0.3.1",
+      "pitfalls_ids": [
+        "P001",
+        "P008"
+      ],
+      "warnings_ids": [
+        "W001",
+        "W002",
+        "W004"
+      ],
+      "action": "skipped",
+      "reason_code": "repo_not_updated",
+      "previous_issue_url": "https://github.com/AMIGA-IAA/hcg-16/issues/20",
+      "findings_signature": "P001|P008|W001|W002|W004",
+      "current_commit_id": "3e46b026f96b30c4b7d69546720bdb9debb07f99",
+      "previous_commit_id": "3e46b026f96b30c4b7d69546720bdb9debb07f99",
+      "dry_run": true,
+      "issue_persistence": "none",
+      "codemeta_generated": false,
+      "codemeta_status": "present",
+      "file": "/home/francois/repos/github.com/codemetasoft/sw-metadata-bot-monitor-web/outputs/SoftwareUnderstanding/20260703/github_com_amiga_iaa_hcg_16/pitfall.jsonld",
+      "unsubscribe_detected": false
+    }
+  ]
+}

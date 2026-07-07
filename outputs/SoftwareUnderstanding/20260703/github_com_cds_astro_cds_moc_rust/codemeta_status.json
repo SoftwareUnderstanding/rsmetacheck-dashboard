@@ -1,0 +1,8 @@
+{
+  "status": "unknown",
+  "missing": false,
+  "generated": false,
+  "generate_if_missing": true,
+  "source": "somef_output.json",
+  "reason": "missing_somef_output"
+}

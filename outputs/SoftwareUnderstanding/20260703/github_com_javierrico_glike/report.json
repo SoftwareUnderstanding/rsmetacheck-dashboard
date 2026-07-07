@@ -1,0 +1,50 @@
+{
+  "run_metadata": {
+    "generated_at": "2026-07-03T14:46:54Z",
+    "dry_run": true,
+    "analysis_summary_file": "/home/francois/repos/github.com/codemetasoft/sw-metadata-bot-monitor-web/outputs/SoftwareUnderstanding/20260703/analysis_results.json",
+    "previous_report_source": "/home/francois/repos/github.com/codemetasoft/sw-metadata-bot-monitor-web/outputs/SoftwareUnderstanding/20260522/run_report.json",
+    "input_config_file": null
+  },
+  "counters": {
+    "total": 1,
+    "created": 0,
+    "simulated": 0,
+    "updated_by_comment": 0,
+    "closed": 0,
+    "skipped": 1,
+    "failed": 0
+  },
+  "records": [
+    {
+      "repo_url": "https://github.com/javierrico/gLike",
+      "platform": "github",
+      "pitfalls_count": 2,
+      "warnings_count": 2,
+      "issue_url": null,
+      "analysis_date": "2026-05-22T06:11:20Z",
+      "sw_metadata_bot_version": "0.5.2",
+      "rsmetacheck_version": "0.3.1",
+      "pitfalls_ids": [
+        "P002",
+        "P014"
+      ],
+      "warnings_ids": [
+        "W002",
+        "W004"
+      ],
+      "action": "skipped",
+      "reason_code": "repo_not_updated",
+      "previous_issue_url": "https://github.com/javierrico/gLike/issues/79",
+      "findings_signature": "P002|P014|W002|W004",
+      "current_commit_id": "6c89dcd25351a970787b76ef84b0b57eeaf723f1",
+      "previous_commit_id": "6c89dcd25351a970787b76ef84b0b57eeaf723f1",
+      "dry_run": true,
+      "issue_persistence": "none",
+      "codemeta_generated": false,
+      "codemeta_status": "present",
+      "file": "/home/francois/repos/github.com/codemetasoft/sw-metadata-bot-monitor-web/outputs/SoftwareUnderstanding/20260703/github_com_javierrico_glike/pitfall.jsonld",
+      "unsubscribe_detected": false
+    }
+  ]
+}

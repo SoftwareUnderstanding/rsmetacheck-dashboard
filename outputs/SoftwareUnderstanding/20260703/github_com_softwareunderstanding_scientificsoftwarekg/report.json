@@ -1,0 +1,47 @@
+{
+  "run_metadata": {
+    "generated_at": "2026-07-03T14:45:57Z",
+    "dry_run": true,
+    "analysis_summary_file": "/home/francois/repos/github.com/codemetasoft/sw-metadata-bot-monitor-web/outputs/SoftwareUnderstanding/20260703/analysis_results.json",
+    "previous_report_source": "/home/francois/repos/github.com/codemetasoft/sw-metadata-bot-monitor-web/outputs/SoftwareUnderstanding/20260522/run_report.json",
+    "input_config_file": null
+  },
+  "counters": {
+    "total": 1,
+    "created": 0,
+    "simulated": 0,
+    "updated_by_comment": 0,
+    "closed": 0,
+    "skipped": 1,
+    "failed": 0
+  },
+  "records": [
+    {
+      "repo_url": "https://github.com/SoftwareUnderstanding/ScientificSoftwareKG",
+      "platform": "github",
+      "pitfalls_count": 0,
+      "warnings_count": 2,
+      "issue_url": null,
+      "analysis_date": "2026-04-27T12:34:45Z",
+      "sw_metadata_bot_version": "0.5.2",
+      "rsmetacheck_version": "0.2.1",
+      "pitfalls_ids": [],
+      "warnings_ids": [
+        "W002",
+        "W004"
+      ],
+      "action": "skipped",
+      "reason_code": "repo_not_updated",
+      "previous_issue_url": "https://github.com/SoftwareUnderstanding/ScientificSoftwareKG/issues/4",
+      "findings_signature": "W002|W004",
+      "current_commit_id": "962da14cd629eb6a0363e70f56a92cc07aab21e0",
+      "previous_commit_id": "962da14cd629eb6a0363e70f56a92cc07aab21e0",
+      "dry_run": true,
+      "issue_persistence": "none",
+      "codemeta_generated": false,
+      "codemeta_status": "present",
+      "file": "/home/francois/repos/github.com/codemetasoft/sw-metadata-bot-monitor-web/outputs/SoftwareUnderstanding/20260703/github_com_softwareunderstanding_scientificsoftwarekg/pitfall.jsonld",
+      "unsubscribe_detected": false
+    }
+  ]
+}

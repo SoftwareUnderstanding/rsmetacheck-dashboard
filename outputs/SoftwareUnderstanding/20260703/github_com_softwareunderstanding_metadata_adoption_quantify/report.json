@@ -1,0 +1,50 @@
+{
+  "run_metadata": {
+    "generated_at": "2026-07-03T14:45:57Z",
+    "dry_run": true,
+    "analysis_summary_file": "/home/francois/repos/github.com/codemetasoft/sw-metadata-bot-monitor-web/outputs/SoftwareUnderstanding/20260703/analysis_results.json",
+    "previous_report_source": "/home/francois/repos/github.com/codemetasoft/sw-metadata-bot-monitor-web/outputs/SoftwareUnderstanding/20260522/run_report.json",
+    "input_config_file": null
+  },
+  "counters": {
+    "total": 1,
+    "created": 0,
+    "simulated": 0,
+    "updated_by_comment": 0,
+    "closed": 0,
+    "skipped": 1,
+    "failed": 0
+  },
+  "records": [
+    {
+      "repo_url": "https://github.com/SoftwareUnderstanding/Metadata-Adoption-Quantify",
+      "platform": "github",
+      "pitfalls_count": 3,
+      "warnings_count": 1,
+      "issue_url": null,
+      "analysis_date": "2026-05-22T06:02:33Z",
+      "sw_metadata_bot_version": "0.5.2",
+      "rsmetacheck_version": "0.3.1",
+      "pitfalls_ids": [
+        "P001",
+        "P014",
+        "P016"
+      ],
+      "warnings_ids": [
+        "W004"
+      ],
+      "action": "skipped",
+      "reason_code": "repo_not_updated",
+      "previous_issue_url": "https://github.com/SoftwareUnderstanding/Metadata-Adoption-Quantify/issues/7",
+      "findings_signature": "P001|P014|P016|W004",
+      "current_commit_id": "cabdfe9a70124a3cb7233107ca51bad343759df4",
+      "previous_commit_id": "cabdfe9a70124a3cb7233107ca51bad343759df4",
+      "dry_run": true,
+      "issue_persistence": "none",
+      "codemeta_generated": false,
+      "codemeta_status": "present",
+      "file": "/home/francois/repos/github.com/codemetasoft/sw-metadata-bot-monitor-web/outputs/SoftwareUnderstanding/20260703/github_com_softwareunderstanding_metadata_adoption_quantify/pitfall.jsonld",
+      "unsubscribe_detected": false
+    }
+  ]
+}

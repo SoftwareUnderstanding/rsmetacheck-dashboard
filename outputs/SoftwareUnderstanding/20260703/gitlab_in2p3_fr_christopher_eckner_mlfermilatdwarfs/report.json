@@ -1,0 +1,43 @@
+{
+  "run_metadata": {
+    "generated_at": "2026-07-03T14:46:23Z",
+    "dry_run": true,
+    "analysis_summary_file": "/home/francois/repos/github.com/codemetasoft/sw-metadata-bot-monitor-web/outputs/SoftwareUnderstanding/20260703/analysis_results.json",
+    "previous_report_source": "/home/francois/repos/github.com/codemetasoft/sw-metadata-bot-monitor-web/outputs/SoftwareUnderstanding/20260522/run_report.json",
+    "input_config_file": null
+  },
+  "counters": {
+    "total": 1,
+    "created": 0,
+    "simulated": 0,
+    "updated_by_comment": 0,
+    "closed": 0,
+    "skipped": 1,
+    "failed": 0
+  },
+  "records": [
+    {
+      "repo_url": "https://gitlab.in2p3.fr/christopher.eckner/mlfermilatdwarfs/",
+      "platform": "gitlab",
+      "pitfalls_count": 0,
+      "warnings_count": 0,
+      "issue_url": null,
+      "analysis_date": "2026-05-22T06:05:49Z",
+      "sw_metadata_bot_version": "0.5.2",
+      "rsmetacheck_version": "0.3.1",
+      "pitfalls_ids": [],
+      "warnings_ids": [],
+      "action": "skipped",
+      "reason_code": "repo_not_updated",
+      "findings_signature": "",
+      "current_commit_id": "d690a5a62a8a466b2c966864662cc9480fcf5cd3",
+      "previous_commit_id": "d690a5a62a8a466b2c966864662cc9480fcf5cd3",
+      "dry_run": true,
+      "issue_persistence": "none",
+      "codemeta_generated": true,
+      "codemeta_status": "missing",
+      "file": "/home/francois/repos/github.com/codemetasoft/sw-metadata-bot-monitor-web/outputs/SoftwareUnderstanding/20260703/gitlab_in2p3_fr_christopher_eckner_mlfermilatdwarfs/pitfall.jsonld",
+      "unsubscribe_detected": false
+    }
+  ]
+}

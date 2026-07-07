@@ -1,0 +1,45 @@
+{
+  "run_metadata": {
+    "generated_at": "2026-07-03T14:46:52Z",
+    "dry_run": true,
+    "analysis_summary_file": "/home/francois/repos/github.com/codemetasoft/sw-metadata-bot-monitor-web/outputs/SoftwareUnderstanding/20260703/analysis_results.json",
+    "previous_report_source": "/home/francois/repos/github.com/codemetasoft/sw-metadata-bot-monitor-web/outputs/SoftwareUnderstanding/20260522/run_report.json",
+    "input_config_file": null
+  },
+  "counters": {
+    "total": 1,
+    "created": 0,
+    "simulated": 0,
+    "updated_by_comment": 0,
+    "closed": 0,
+    "skipped": 1,
+    "failed": 0
+  },
+  "records": [
+    {
+      "repo_url": "https://gitlab.in2p3.fr/escape2020/wp3/ossr-curation",
+      "platform": "gitlab",
+      "pitfalls_count": 0,
+      "warnings_count": 1,
+      "issue_url": null,
+      "analysis_date": "2026-05-22T06:09:37Z",
+      "sw_metadata_bot_version": "0.5.2",
+      "rsmetacheck_version": "0.3.1",
+      "pitfalls_ids": [],
+      "warnings_ids": [
+        "W004"
+      ],
+      "action": "skipped",
+      "reason_code": "repo_not_updated",
+      "findings_signature": "W004",
+      "current_commit_id": "e31194553410ffa2c7a32b0699602e794a31b272",
+      "previous_commit_id": "e31194553410ffa2c7a32b0699602e794a31b272",
+      "dry_run": true,
+      "issue_persistence": "none",
+      "codemeta_generated": false,
+      "codemeta_status": "present",
+      "file": "/home/francois/repos/github.com/codemetasoft/sw-metadata-bot-monitor-web/outputs/SoftwareUnderstanding/20260703/gitlab_in2p3_fr_escape2020_wp3_ossr_curation/pitfall.jsonld",
+      "unsubscribe_detected": false
+    }
+  ]
+}

@@ -1,0 +1,8 @@
+{
+  "status": "present",
+  "missing": false,
+  "generated": false,
+  "generate_if_missing": true,
+  "source": "somef_output.json",
+  "reason": "detected_in_somef_sources"
+}

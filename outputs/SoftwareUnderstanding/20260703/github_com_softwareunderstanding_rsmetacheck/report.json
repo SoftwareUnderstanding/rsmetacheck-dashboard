@@ -1,0 +1,41 @@
+{
+  "run_metadata": {
+    "generated_at": "2026-07-03T14:46:02Z",
+    "dry_run": true,
+    "analysis_summary_file": "/home/francois/repos/github.com/codemetasoft/sw-metadata-bot-monitor-web/outputs/SoftwareUnderstanding/20260703/analysis_results.json",
+    "previous_report_source": "/home/francois/repos/github.com/codemetasoft/sw-metadata-bot-monitor-web/outputs/SoftwareUnderstanding/20260522/run_report.json",
+    "input_config_file": null
+  },
+  "counters": {
+    "total": 1,
+    "created": 0,
+    "simulated": 0,
+    "updated_by_comment": 0,
+    "closed": 0,
+    "skipped": 0,
+    "failed": 1
+  },
+  "records": [
+    {
+      "repo_url": "https://github.com/SoftwareUnderstanding/RsMetaCheck",
+      "platform": "github",
+      "pitfalls_count": 0,
+      "warnings_count": 0,
+      "issue_url": null,
+      "analysis_date": "unknown",
+      "sw_metadata_bot_version": "0.5.2",
+      "rsmetacheck_version": "unknown",
+      "pitfalls_ids": [],
+      "warnings_ids": [],
+      "action": "failed",
+      "reason_code": "missing_pitfall_file",
+      "findings_signature": "",
+      "current_commit_id": "f4767ec984389598c30582328125c90f32528a6b",
+      "dry_run": true,
+      "issue_persistence": "none",
+      "file": "/home/francois/repos/github.com/codemetasoft/sw-metadata-bot-monitor-web/outputs/SoftwareUnderstanding/20260703/github_com_softwareunderstanding_rsmetacheck/pitfall.jsonld",
+      "error": "Missing pitfall file: outputs/SoftwareUnderstanding/20260703/github_com_softwareunderstanding_rsmetacheck/pitfall.jsonld",
+      "unsubscribe_detected": false
+    }
+  ]
+}
