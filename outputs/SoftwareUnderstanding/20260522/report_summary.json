@@ -1,0 +1,77 @@
+{
+  "repository_count": 36,
+  "pitfalls_by_id": {
+    "P001": 8,
+    "P002": 8,
+    "P004": 3,
+    "P006": 1,
+    "P008": 2,
+    "P011": 2,
+    "P012": 3,
+    "P014": 6,
+    "P016": 1,
+    "P017": 3
+  },
+  "warnings_by_id": {
+    "W001": 16,
+    "W002": 19,
+    "W003": 1,
+    "W004": 23,
+    "W005": 2
+  },
+  "total_pitfalls": 37,
+  "total_warnings": 61,
+  "issues_created": 16,
+  "actions": {
+    "created": 16,
+    "failed": 10,
+    "skipped": 9,
+    "updated_by_comment": 1
+  },
+  "reason_codes": {
+    "changed_and_issue_closed": 1,
+    "changed_and_issue_open": 1,
+    "identical_and_issue_open": 1,
+    "missing_pitfall_file": 2,
+    "no_previous_analysis": 15,
+    "publish_exception": 8,
+    "repo_not_updated": 8
+  },
+  "reason_codes_by_action": {
+    "created": {
+      "changed_and_issue_closed": 1,
+      "no_previous_analysis": 15
+    },
+    "failed": {
+      "missing_pitfall_file": 2,
+      "publish_exception": 8
+    },
+    "skipped": {
+      "identical_and_issue_open": 1,
+      "repo_not_updated": 8
+    },
+    "updated_by_comment": {
+      "changed_and_issue_open": 1
+    }
+  },
+  "reason_code_percentages_by_action": {
+    "created": {
+      "changed_and_issue_closed": 6.25,
+      "no_previous_analysis": 93.75
+    },
+    "failed": {
+      "missing_pitfall_file": 20.0,
+      "publish_exception": 80.0
+    },
+    "skipped": {
+      "identical_and_issue_open": 11.11111111111111,
+      "repo_not_updated": 88.88888888888889
+    },
+    "updated_by_comment": {
+      "changed_and_issue_open": 100.0
+    }
+  },
+  "pitfalls_per_repository": 1.0277777777777777,
+  "warnings_per_repository": 1.6944444444444444,
+  "issues_created_per_repository": 0.4444444444444444
+}
