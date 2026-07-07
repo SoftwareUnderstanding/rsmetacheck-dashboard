@@ -1,0 +1,18 @@
+{
+  "version": "1.1.0",
+  "analysis": {
+    "repositories": [
+      "https://github.com/cta-observatory/lstmcpipe/"
+    ],
+    "generate_codemeta_if_missing": true
+  },
+  "issues": {
+    "custom_issue_message": "You have subscribed to the Codemetasoft initiative. This initiative is meant to test the use of a bot to monitor the quality of metadata in software repositories.",
+    "opt_outs": []
+  },
+  "outputs": {
+    "output_root_dir": "outputs",
+    "run_name": "Volunteer_subscribers",
+    "snapshot_tag_format": "%Y%m%d"
+  }
+}
