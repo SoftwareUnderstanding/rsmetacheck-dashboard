@@ -6,5 +6,5 @@ readme = "README.md"
 requires-python = ">=3.11"
 dependencies = [
     "pystache>=0.6.8",
-    "sw-metadata-bot>=0.5.2",
+    "sw-metadata-bot>=0.5.3",
 ]
