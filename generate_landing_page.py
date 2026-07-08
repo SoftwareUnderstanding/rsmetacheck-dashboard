@@ -35,8 +35,12 @@ def collect_dashboard_data(config: dict) -> tuple[list[dict], dict]:
         repository_count = summary_data.get("repository_count", 0)
         total_pitfalls = summary_data.get("total_pitfalls", 0)
         total_warnings = summary_data.get("total_warnings", 0)
+        pitfalls_by_ids = summary_data.get("pitfalls_by_id", {})
+        warnings_by_ids = summary_data.get("warnings_by_id", {})
+        repo_issue_status: dict = summary_data.get("reason_codes_by_action", {})
         issues_created = summary_data.get("issues_created", 0)
-
+        mean_pitfalls_per_repo = summary_data.get("pitfalls_per_repository", 0)
+        mean_warnings_per_repo = summary_data.get("warnings_per_repository", 0)
         summary_points.append(
             {
                 "snapshot_tag": snapshot_tag,
@@ -46,6 +50,11 @@ def collect_dashboard_data(config: dict) -> tuple[list[dict], dict]:
                 "total_pitfalls": total_pitfalls,
                 "total_warnings": total_warnings,
                 "issues_created": issues_created,
+                "pitfalls_by_ids": pitfalls_by_ids,
+                "warnings_by_ids": warnings_by_ids,
+                "repo_issue_status": repo_issue_status,
+                "mean_pitfalls_per_repo": mean_pitfalls_per_repo,
+                "mean_warnings_per_repo": mean_warnings_per_repo,
             }
         )
 
