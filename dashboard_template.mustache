@@ -266,6 +266,32 @@
                 <div class="chart-title">Pitfalls vs warnings by analysis date</div>
                 <canvas id="barChart" height="120"></canvas>
             </div>
+
+            <div class="chart-card">
+                <div class="chart-title">Pitfall and warning ID breakdown per analysis</div>
+                <canvas id="breakdownChart" height="120"></canvas>
+            </div>
+
+            <div class="chart-card">
+                <div class="chart-title">Issue status per analysis</div>
+                <canvas id="statusChart" height="120"></canvas>
+            </div>
+
+            <div class="chart-card">
+                <div class="chart-title">Issue status table</div>
+                <table style="width: 100%; border-collapse: collapse;">
+                    <thead>
+                        <tr>
+                            <th style="text-align: left; padding: 0.5rem; border-bottom: 1px solid var(--border-color);">Analysis</th>
+                            <th style="text-align: left; padding: 0.5rem; border-bottom: 1px solid var(--border-color);">Created</th>
+                            <th style="text-align: left; padding: 0.5rem; border-bottom: 1px solid var(--border-color);">Failed</th>
+                            <th style="text-align: left; padding: 0.5rem; border-bottom: 1px solid var(--border-color);">Skipped</th>
+                            <th style="text-align: left; padding: 0.5rem; border-bottom: 1px solid var(--border-color);">Updated by comment</th>
+                        </tr>
+                    </thead>
+                    <tbody id="statusTableBody"></tbody>
+                </table>
+            </div>
             {{/dashboard_data_available}}
             {{^dashboard_data_available}}
             <div class="chart-card">
@@ -291,9 +317,29 @@
             return repositoryCount > 0 ? (rawValue / repositoryCount) * 100 : 0;
         }
 
+        function getScaledValue(point, rawValue) {
+            if (!useRelative) {
+                return rawValue;
+            }
+            const repositoryCount = point.repository_count || 0;
+            return repositoryCount > 0 ? (rawValue / repositoryCount) * 100 : 0;
+        }
+
+        function buildChartColor(index, alpha = 0.75) {
+            const colors = ['#ef4444', '#3b82f6', '#10b981', '#f59e0b', '#8b5cf6', '#14b8a6', '#ec4899', '#64748b'];
+            const color = colors[index % colors.length];
+            const hex = color.replace('#', '');
+            const r = parseInt(hex.slice(0, 2), 16);
+            const g = parseInt(hex.slice(2, 4), 16);
+            const b = parseInt(hex.slice(4, 6), 16);
+            return `rgba(${r}, ${g}, ${b}, ${alpha})`;
+        }
+
         function updateCharts() {
             const trendCtx = document.getElementById('trendChart');
             const barCtx = document.getElementById('barChart');
+            const breakdownCtx = document.getElementById('breakdownChart');
+            const statusCtx = document.getElementById('statusChart');
             const labels = dashboardData.map((point) => point.label);
             const trendSeries = {
                 absolute: {
@@ -394,6 +440,106 @@
                     }
                 }
             });
+
+            const breakdownChart = Chart.getChart('breakdownChart');
+            if (breakdownChart) {
+                breakdownChart.destroy();
+            }
+            const pitfallIds = Array.from(new Set(dashboardData.flatMap((point) => Object.keys(point.pitfalls_by_ids || {}))))
+            const warningIds = Array.from(new Set(dashboardData.flatMap((point) => Object.keys(point.warnings_by_ids || {}))))
+            const breakdownDatasets = [
+                ...pitfallIds.map((id, index) => ({
+                    label: `Pitfall ${id}`,
+                    data: dashboardData.map((point) => getScaledValue(point, point.pitfalls_by_ids?.[id] || 0)),
+                    backgroundColor: buildChartColor(index, 0.8),
+                    borderColor: buildChartColor(index, 1),
+                    stack: 'pitfalls'
+                })),
+                ...warningIds.map((id, index) => ({
+                    label: `Warning ${id}`,
+                    data: dashboardData.map((point) => getScaledValue(point, point.warnings_by_ids?.[id] || 0)),
+                    backgroundColor: buildChartColor(index + pitfallIds.length, 0.8),
+                    borderColor: buildChartColor(index + pitfallIds.length, 1),
+                    stack: 'warnings'
+                }))
+            ];
+            new Chart(breakdownCtx, {
+                type: 'bar',
+                data: {
+                    labels: labels,
+                    datasets: breakdownDatasets
+                },
+                options: {
+                    responsive: true,
+                    scales: {
+                        x: {
+                            stacked: true
+                        },
+                        y: {
+                            stacked: true,
+                            beginAtZero: true,
+                            title: {
+                                display: true,
+                                text: useRelative ? 'Relative (%)' : 'Count'
+                            }
+                        }
+                    },
+                    plugins: {
+                        legend: {
+                            position: 'bottom'
+                        }
+                    }
+                }
+            });
+
+            const statusChartInstance = Chart.getChart('statusChart');
+            if (statusChartInstance) {
+                statusChartInstance.destroy();
+            }
+            const statusKeys = ['created', 'failed', 'skipped', 'updated_by_comment'];
+            const statusColors = ['#10b981', '#ef4444', '#64748b', '#f59e0b'];
+            new Chart(statusCtx, {
+                type: 'bar',
+                data: {
+                    labels: labels,
+                    datasets: statusKeys.map((key, index) => ({
+                        label: key.replace(/_/g, ' '),
+                        data: dashboardData.map((point) => {
+                            const actionMap = point.repo_issue_status || {};
+                            return getScaledValue(point, actionMap[key] || 0);
+                        }),
+                        backgroundColor: statusColors[index],
+                        stack: 'status'
+                    }))
+                },
+                options: {
+                    responsive: true,
+                    scales: {
+                        x: {
+                            stacked: true
+                        },
+                        y: {
+                            stacked: true,
+                            beginAtZero: true,
+                            title: {
+                                display: true,
+                                text: useRelative ? 'Relative (%)' : 'Count'
+                            }
+                        }
+                    },
+                    plugins: {
+                        legend: {
+                            position: 'bottom'
+                        }
+                    }
+                }
+            });
+
+            const statusTableBody = document.getElementById('statusTableBody');
+            statusTableBody.innerHTML = dashboardData.map((point) => {
+                const actionMap = point.repo_issue_status || {};
+                return `<tr><td style="padding: 0.5rem; border-bottom: 1px solid var(--border-color);">${point.label}</td><td style="padding: 0.5rem; border-bottom: 1px solid var(--border-color);">${actionMap.created || 0}</td><td style="padding: 0.5rem; border-bottom: 1px solid var(--border-color);">${actionMap.failed || 0}</td><td style="padding: 0.5rem; border-bottom: 1px solid var(--border-color);">${actionMap.skipped || 0}</td><td style="padding: 0.5rem; border-bottom: 1px solid var(--border-color);">${actionMap.updated_by_comment || 0}</td></tr>`;
+            }).join('');
         }
 
         if (dashboardData.length) {

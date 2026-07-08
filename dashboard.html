@@ -234,7 +234,7 @@
         <header>
             <h1>Summary Dashboard</h1>
             <p class="subtitle">A rolling overview of the monitored analyses, with historical trends for pitfalls and warnings over time.</p>
-            <div class="date-stamp">Generated on: July 08, 2026 at 12:17 UTC</div>
+            <div class="date-stamp">Generated on: July 08, 2026 at 12:57 UTC</div>
         </header>
 
         <div class="container">
@@ -271,12 +271,38 @@
                 <div class="chart-title">Pitfalls vs warnings by analysis date</div>
                 <canvas id="barChart" height="120"></canvas>
             </div>
+
+            <div class="chart-card">
+                <div class="chart-title">Pitfall and warning ID breakdown per analysis</div>
+                <canvas id="breakdownChart" height="120"></canvas>
+            </div>
+
+            <div class="chart-card">
+                <div class="chart-title">Issue status per analysis</div>
+                <canvas id="statusChart" height="120"></canvas>
+            </div>
+
+            <div class="chart-card">
+                <div class="chart-title">Issue status table</div>
+                <table style="width: 100%; border-collapse: collapse;">
+                    <thead>
+                        <tr>
+                            <th style="text-align: left; padding: 0.5rem; border-bottom: 1px solid var(--border-color);">Analysis</th>
+                            <th style="text-align: left; padding: 0.5rem; border-bottom: 1px solid var(--border-color);">Created</th>
+                            <th style="text-align: left; padding: 0.5rem; border-bottom: 1px solid var(--border-color);">Failed</th>
+                            <th style="text-align: left; padding: 0.5rem; border-bottom: 1px solid var(--border-color);">Skipped</th>
+                            <th style="text-align: left; padding: 0.5rem; border-bottom: 1px solid var(--border-color);">Updated by comment</th>
+                        </tr>
+                    </thead>
+                    <tbody id="statusTableBody"></tbody>
+                </table>
+            </div>
         </div>
     </div>
 
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
     <script>
-        const dashboardData = [{"snapshot_tag": "20260427", "label": "Apr 27, 2026", "path": "outputs/SoftwareUnderstanding/20260427/report_summary.json", "repository_count": 12, "total_pitfalls": 14, "total_warnings": 16, "issues_created": 12}, {"snapshot_tag": "20260428", "label": "Apr 28, 2026", "path": "outputs/SoftwareUnderstanding/20260428/report_summary.json", "repository_count": 12, "total_pitfalls": 14, "total_warnings": 14, "issues_created": 0}, {"snapshot_tag": "20260429", "label": "Apr 29, 2026", "path": "outputs/SoftwareUnderstanding/20260429/report_summary.json", "repository_count": 12, "total_pitfalls": 13, "total_warnings": 15, "issues_created": 2}, {"snapshot_tag": "20260505", "label": "May 05, 2026", "path": "outputs/SoftwareUnderstanding/20260505/report_summary.json", "repository_count": 12, "total_pitfalls": 12, "total_warnings": 13, "issues_created": 1}, {"snapshot_tag": "20260522", "label": "May 22, 2026", "path": "outputs/SoftwareUnderstanding/20260522/report_summary.json", "repository_count": 36, "total_pitfalls": 37, "total_warnings": 61, "issues_created": 16}, {"snapshot_tag": "20260706", "label": "Jul 06, 2026", "path": "outputs/SoftwareUnderstanding/20260706/report_summary.json", "repository_count": 37, "total_pitfalls": 25, "total_warnings": 35, "issues_created": 0}];
+        const dashboardData = [{"snapshot_tag": "20260427", "label": "Apr 27, 2026", "path": "outputs/SoftwareUnderstanding/20260427/report_summary.json", "repository_count": 12, "total_pitfalls": 14, "total_warnings": 16, "issues_created": 12, "pitfalls_by_ids": {"P001": 2, "P002": 9, "P014": 1, "P016": 1, "P017": 1}, "warnings_by_ids": {"W001": 4, "W002": 5, "W003": 1, "W004": 5, "W005": 1}, "repo_issue_status": {"created": 12}, "mean_pitfalls_per_repo": 1.1666666666666667, "mean_warnings_per_repo": 1.3333333333333333}, {"snapshot_tag": "20260428", "label": "Apr 28, 2026", "path": "outputs/SoftwareUnderstanding/20260428/report_summary.json", "repository_count": 12, "total_pitfalls": 14, "total_warnings": 14, "issues_created": 0, "pitfalls_by_ids": {"P001": 2, "P002": 9, "P014": 1, "P016": 1, "P017": 1}, "warnings_by_ids": {"W001": 3, "W002": 5, "W003": 1, "W004": 4, "W005": 1}, "repo_issue_status": {"failed": 1, "skipped": 10, "updated_by_comment": 1}, "mean_pitfalls_per_repo": 1.1666666666666667, "mean_warnings_per_repo": 1.1666666666666667}, {"snapshot_tag": "20260429", "label": "Apr 29, 2026", "path": "outputs/SoftwareUnderstanding/20260429/report_summary.json", "repository_count": 12, "total_pitfalls": 13, "total_warnings": 15, "issues_created": 2, "pitfalls_by_ids": {"P001": 2, "P002": 7, "P014": 1, "P016": 1, "P017": 2}, "warnings_by_ids": {"W001": 3, "W002": 6, "W004": 6}, "repo_issue_status": {"created": 2, "failed": 1, "skipped": 8, "updated_by_comment": 1}, "mean_pitfalls_per_repo": 1.0833333333333333, "mean_warnings_per_repo": 1.25}, {"snapshot_tag": "20260505", "label": "May 05, 2026", "path": "outputs/SoftwareUnderstanding/20260505/report_summary.json", "repository_count": 12, "total_pitfalls": 12, "total_warnings": 13, "issues_created": 1, "pitfalls_by_ids": {"P001": 2, "P002": 6, "P014": 1, "P016": 1, "P017": 2}, "warnings_by_ids": {"W001": 2, "W002": 6, "W004": 5}, "repo_issue_status": {"closed": 1, "created": 1, "failed": 1, "skipped": 8, "updated_by_comment": 1}, "mean_pitfalls_per_repo": 1.0, "mean_warnings_per_repo": 1.0833333333333333}, {"snapshot_tag": "20260522", "label": "May 22, 2026", "path": "outputs/SoftwareUnderstanding/20260522/report_summary.json", "repository_count": 36, "total_pitfalls": 37, "total_warnings": 61, "issues_created": 16, "pitfalls_by_ids": {"P001": 8, "P002": 8, "P004": 3, "P006": 1, "P008": 2, "P011": 2, "P012": 3, "P014": 6, "P016": 1, "P017": 3}, "warnings_by_ids": {"W001": 16, "W002": 19, "W003": 1, "W004": 23, "W005": 2}, "repo_issue_status": {"created": 16, "failed": 10, "skipped": 9, "updated_by_comment": 1}, "mean_pitfalls_per_repo": 1.0277777777777777, "mean_warnings_per_repo": 1.6944444444444444}, {"snapshot_tag": "20260706", "label": "Jul 06, 2026", "path": "outputs/SoftwareUnderstanding/20260706/report_summary.json", "repository_count": 37, "total_pitfalls": 25, "total_warnings": 35, "issues_created": 0, "pitfalls_by_ids": {"P001": 6, "P002": 6, "P004": 3, "P008": 1, "P011": 1, "P012": 2, "P014": 4, "P016": 1, "P017": 1}, "warnings_by_ids": {"W001": 10, "W002": 12, "W004": 12, "W005": 1}, "repo_issue_status": {"failed": 14, "simulated_created": 3, "skipped": 19, "updated_by_comment": 1}, "mean_pitfalls_per_repo": 0.6756756756756757, "mean_warnings_per_repo": 0.9459459459459459}];
         const absoluteBtn = document.getElementById('absolute-mode');
         const relativeBtn = document.getElementById('relative-mode');
         let useRelative = false;
@@ -290,9 +316,29 @@
             return repositoryCount > 0 ? (rawValue / repositoryCount) * 100 : 0;
         }
 
+        function getScaledValue(point, rawValue) {
+            if (!useRelative) {
+                return rawValue;
+            }
+            const repositoryCount = point.repository_count || 0;
+            return repositoryCount > 0 ? (rawValue / repositoryCount) * 100 : 0;
+        }
+
+        function buildChartColor(index, alpha = 0.75) {
+            const colors = ['#ef4444', '#3b82f6', '#10b981', '#f59e0b', '#8b5cf6', '#14b8a6', '#ec4899', '#64748b'];
+            const color = colors[index % colors.length];
+            const hex = color.replace('#', '');
+            const r = parseInt(hex.slice(0, 2), 16);
+            const g = parseInt(hex.slice(2, 4), 16);
+            const b = parseInt(hex.slice(4, 6), 16);
+            return `rgba(${r}, ${g}, ${b}, ${alpha})`;
+        }
+
         function updateCharts() {
             const trendCtx = document.getElementById('trendChart');
             const barCtx = document.getElementById('barChart');
+            const breakdownCtx = document.getElementById('breakdownChart');
+            const statusCtx = document.getElementById('statusChart');
             const labels = dashboardData.map((point) => point.label);
             const trendSeries = {
                 absolute: {
@@ -393,6 +439,106 @@
                     }
                 }
             });
+
+            const breakdownChart = Chart.getChart('breakdownChart');
+            if (breakdownChart) {
+                breakdownChart.destroy();
+            }
+            const pitfallIds = Array.from(new Set(dashboardData.flatMap((point) => Object.keys(point.pitfalls_by_ids || {}))))
+            const warningIds = Array.from(new Set(dashboardData.flatMap((point) => Object.keys(point.warnings_by_ids || {}))))
+            const breakdownDatasets = [
+                ...pitfallIds.map((id, index) => ({
+                    label: `Pitfall ${id}`,
+                    data: dashboardData.map((point) => getScaledValue(point, point.pitfalls_by_ids?.[id] || 0)),
+                    backgroundColor: buildChartColor(index, 0.8),
+                    borderColor: buildChartColor(index, 1),
+                    stack: 'pitfalls'
+                })),
+                ...warningIds.map((id, index) => ({
+                    label: `Warning ${id}`,
+                    data: dashboardData.map((point) => getScaledValue(point, point.warnings_by_ids?.[id] || 0)),
+                    backgroundColor: buildChartColor(index + pitfallIds.length, 0.8),
+                    borderColor: buildChartColor(index + pitfallIds.length, 1),
+                    stack: 'warnings'
+                }))
+            ];
+            new Chart(breakdownCtx, {
+                type: 'bar',
+                data: {
+                    labels: labels,
+                    datasets: breakdownDatasets
+                },
+                options: {
+                    responsive: true,
+                    scales: {
+                        x: {
+                            stacked: true
+                        },
+                        y: {
+                            stacked: true,
+                            beginAtZero: true,
+                            title: {
+                                display: true,
+                                text: useRelative ? 'Relative (%)' : 'Count'
+                            }
+                        }
+                    },
+                    plugins: {
+                        legend: {
+                            position: 'bottom'
+                        }
+                    }
+                }
+            });
+
+            const statusChartInstance = Chart.getChart('statusChart');
+            if (statusChartInstance) {
+                statusChartInstance.destroy();
+            }
+            const statusKeys = ['created', 'failed', 'skipped', 'updated_by_comment'];
+            const statusColors = ['#10b981', '#ef4444', '#64748b', '#f59e0b'];
+            new Chart(statusCtx, {
+                type: 'bar',
+                data: {
+                    labels: labels,
+                    datasets: statusKeys.map((key, index) => ({
+                        label: key.replace(/_/g, ' '),
+                        data: dashboardData.map((point) => {
+                            const actionMap = point.repo_issue_status || {};
+                            return getScaledValue(point, actionMap[key] || 0);
+                        }),
+                        backgroundColor: statusColors[index],
+                        stack: 'status'
+                    }))
+                },
+                options: {
+                    responsive: true,
+                    scales: {
+                        x: {
+                            stacked: true
+                        },
+                        y: {
+                            stacked: true,
+                            beginAtZero: true,
+                            title: {
+                                display: true,
+                                text: useRelative ? 'Relative (%)' : 'Count'
+                            }
+                        }
+                    },
+                    plugins: {
+                        legend: {
+                            position: 'bottom'
+                        }
+                    }
+                }
+            });
+
+            const statusTableBody = document.getElementById('statusTableBody');
+            statusTableBody.innerHTML = dashboardData.map((point) => {
+                const actionMap = point.repo_issue_status || {};
+                return `<tr><td style="padding: 0.5rem; border-bottom: 1px solid var(--border-color);">${point.label}</td><td style="padding: 0.5rem; border-bottom: 1px solid var(--border-color);">${actionMap.created || 0}</td><td style="padding: 0.5rem; border-bottom: 1px solid var(--border-color);">${actionMap.failed || 0}</td><td style="padding: 0.5rem; border-bottom: 1px solid var(--border-color);">${actionMap.skipped || 0}</td><td style="padding: 0.5rem; border-bottom: 1px solid var(--border-color);">${actionMap.updated_by_comment || 0}</td></tr>`;
+            }).join('');
         }
 
         if (dashboardData.length) {

@@ -37,7 +37,9 @@ def collect_dashboard_data(config: dict) -> tuple[list[dict], dict]:
         total_warnings = summary_data.get("total_warnings", 0)
         pitfalls_by_ids = summary_data.get("pitfalls_by_id", {})
         warnings_by_ids = summary_data.get("warnings_by_id", {})
-        repo_issue_status: dict = summary_data.get("reason_codes_by_action", {})
+        repo_issue_status: dict = summary_data.get("actions", {}) or summary_data.get(
+            "reason_codes_by_action", {}
+        )
         issues_created = summary_data.get("issues_created", 0)
         mean_pitfalls_per_repo = summary_data.get("pitfalls_per_repository", 0)
         mean_warnings_per_repo = summary_data.get("warnings_per_repository", 0)
