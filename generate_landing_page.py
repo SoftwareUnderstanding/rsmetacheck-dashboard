@@ -8,6 +8,58 @@ from datetime import timezone
 import pystache
 
 
+def collect_dashboard_data(config: dict) -> tuple[list[dict], dict]:
+    """Collect summary data from snapshot report_summary.json files."""
+    outputs_config = config["outputs"]
+    root_dir = outputs_config.get("root_dir") or outputs_config.get("output_root_dir")
+    run_name = outputs_config["run_name"]
+    snapshot_tag_format = outputs_config["snapshot_tag_format"]
+
+    pattern = os.path.join(root_dir, run_name, "*", "report_summary.json")
+    summary_points = []
+
+    for summary_path in glob.glob(pattern):
+        snapshot_tag = os.path.basename(os.path.dirname(summary_path))
+        try:
+            dt = datetime.datetime.strptime(snapshot_tag, snapshot_tag_format)
+            label = dt.strftime("%b %d, %Y")
+        except ValueError:
+            label = snapshot_tag
+
+        try:
+            with open(summary_path, "r") as f:
+                summary_data = json.load(f)
+        except Exception:
+            continue
+
+        repository_count = summary_data.get("repository_count", 0)
+        total_pitfalls = summary_data.get("total_pitfalls", 0)
+        total_warnings = summary_data.get("total_warnings", 0)
+        issues_created = summary_data.get("issues_created", 0)
+
+        summary_points.append(
+            {
+                "snapshot_tag": snapshot_tag,
+                "label": label,
+                "path": summary_path,
+                "repository_count": repository_count,
+                "total_pitfalls": total_pitfalls,
+                "total_warnings": total_warnings,
+                "issues_created": issues_created,
+            }
+        )
+
+    summary_points.sort(key=lambda x: x["snapshot_tag"])
+
+    totals = {
+        "analysis_count": len(summary_points),
+        "issues_created_total": sum(item["issues_created"] for item in summary_points),
+        "total_pitfalls": sum(item["total_pitfalls"] for item in summary_points),
+        "total_warnings": sum(item["total_warnings"] for item in summary_points),
+    }
+    return summary_points, totals
+
+
 def argument_parser() -> argparse.Namespace:
     parser = argparse.ArgumentParser()
     parser.add_argument(
@@ -64,9 +116,10 @@ def scan_run_reports(config: dict) -> list[dict]:
         label         — human-readable date string (e.g. "April 08, 2026")
         path          — path to run_report.json
     """
-    root_dir = config["outputs"]["root_dir"]
-    run_name = config["outputs"]["run_name"]
-    snapshot_tag_format = config["outputs"]["snapshot_tag_format"]
+    outputs_config = config["outputs"]
+    root_dir = outputs_config.get("root_dir") or outputs_config.get("output_root_dir")
+    run_name = outputs_config["run_name"]
+    snapshot_tag_format = outputs_config["snapshot_tag_format"]
 
     pattern = os.path.join(root_dir, run_name, "*", "run_report.json")
     snapshots = []
@@ -113,13 +166,18 @@ def main():
 
     snapshots = scan_run_reports(config)
     if not snapshots:
+        outputs_config = config["outputs"]
         root = os.path.join(
-            config["outputs"]["root_dir"], config["outputs"]["run_name"]
+            outputs_config.get("root_dir") or outputs_config.get("output_root_dir"),
+            outputs_config["run_name"],
         )
         print(f"No run_report.json files found under {root}/. Exiting.")
         return
 
     all_links = build_history_links(snapshots)
+    root_links = [
+        {"url": lk["url"], "label": lk["label"], "is_active": False} for lk in all_links
+    ]
 
     with open("template.mustache", "r") as f:
         template = f.read()
@@ -153,6 +211,31 @@ def main():
         with open(os.path.join(HISTORY_DIR, link["filename"]), "w") as f:
             f.write(html)
 
+    dashboard_points, dashboard_totals = collect_dashboard_data(config)
+    dashboard_data_available = bool(dashboard_points)
+    dashboard_data_json = json.dumps(dashboard_points)
+
+    with open("dashboard_template.mustache", "r") as f:
+        dashboard_template = f.read()
+
+    dashboard_date = datetime.datetime.now(timezone.utc).strftime(
+        "%B %d, %Y at %H:%M UTC"
+    )
+    dashboard_template_data = {
+        "date_stamp": dashboard_date,
+        "analysis_count": dashboard_totals["analysis_count"],
+        "issues_created_total": dashboard_totals["issues_created_total"],
+        "total_pitfalls": dashboard_totals["total_pitfalls"],
+        "total_warnings": dashboard_totals["total_warnings"],
+        "dashboard_data_available": dashboard_data_available,
+        "dashboard_data_json": dashboard_data_json,
+        "base_path": "",
+        "history_links": root_links,
+    }
+    dashboard_html = pystache.render(dashboard_template, dashboard_template_data)
+    with open("dashboard.html", "w") as f:
+        f.write(dashboard_html)
+
     # Generate the current index.html from the most recent snapshot
     current_snapshot = snapshots[-1]
     with open(current_snapshot["path"], "r") as f:
@@ -170,10 +253,6 @@ def main():
         date_stamp = datetime.datetime.now(timezone.utc).strftime(
             "%B %d, %Y at %H:%M UTC"
         )
-
-    root_links = [
-        {"url": lk["url"], "label": lk["label"], "is_active": False} for lk in all_links
-    ]
 
     template_data = {
         "date_stamp": date_stamp,

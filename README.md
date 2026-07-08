@@ -33,7 +33,7 @@ python -m pip install "pystache>=0.6.8" "sw-metadata-bot>=0.4.1"
 Use the helper script to run new analysis, submit issues and update the index.html:
 
 ```bash
-bash input/run_analysis.sh
+make
 ```
 
 The script now supports two modes automatically:

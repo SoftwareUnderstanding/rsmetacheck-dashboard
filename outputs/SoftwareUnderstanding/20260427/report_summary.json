@@ -1,0 +1,52 @@
+{
+  "tool_metadata": {
+    "sw_metadata_bot_version": "0.4.2",
+    "rsmetacheck_version": "0.2.1"
+  },
+  "run_metadata": {
+    "generated_at": "2026-04-27T12:36:25Z",
+    "dry_run": false,
+    "analysis_summary_file": "20260427/analysis_results.json",
+    "previous_report_source": null,
+    "published_at": "2026-04-27T12:36:25Z",
+    "idempotency_skipped_records": 0,
+    "failed_retry_skipped_records": 0
+  },
+  "repository_count": 12,
+  "pitfalls_by_id": {
+    "P001": 2,
+    "P002": 9,
+    "P014": 1,
+    "P016": 1,
+    "P017": 1
+  },
+  "warnings_by_id": {
+    "W001": 4,
+    "W002": 5,
+    "W003": 1,
+    "W004": 5,
+    "W005": 1
+  },
+  "total_pitfalls": 14,
+  "total_warnings": 16,
+  "issues_created": 12,
+  "actions": {
+    "created": 12
+  },
+  "reason_codes": {
+    "no_previous_analysis": 12
+  },
+  "reason_codes_by_action": {
+    "created": {
+      "no_previous_analysis": 12
+    }
+  },
+  "reason_code_percentages_by_action": {
+    "created": {
+      "no_previous_analysis": 100.0
+    }
+  },
+  "pitfalls_per_repository": 1.1666666666666667,
+  "warnings_per_repository": 1.3333333333333333,
+  "issues_created_per_repository": 1.0
+}

@@ -1,0 +1,71 @@
+{
+  "tool_metadata": {
+    "sw_metadata_bot_version": "0.4.2",
+    "rsmetacheck_version": "0.2.1"
+  },
+  "run_metadata": {
+    "generated_at": "2026-04-28T12:57:50Z",
+    "dry_run": false,
+    "analysis_summary_file": "20260428/analysis_results.json",
+    "previous_report_source": "20260427/run_report.json",
+    "published_at": "2026-04-28T12:57:50Z",
+    "idempotency_skipped_records": 0,
+    "failed_retry_skipped_records": 1
+  },
+  "repository_count": 12,
+  "pitfalls_by_id": {
+    "P001": 2,
+    "P002": 9,
+    "P014": 1,
+    "P016": 1,
+    "P017": 1
+  },
+  "warnings_by_id": {
+    "W001": 3,
+    "W002": 5,
+    "W003": 1,
+    "W004": 4,
+    "W005": 1
+  },
+  "total_pitfalls": 14,
+  "total_warnings": 14,
+  "issues_created": 0,
+  "actions": {
+    "failed": 1,
+    "skipped": 10,
+    "updated_by_comment": 1
+  },
+  "reason_codes": {
+    "changed_and_issue_open": 1,
+    "identical_and_issue_open": 1,
+    "missing_pitfall_file": 1,
+    "repo_not_updated": 9
+  },
+  "reason_codes_by_action": {
+    "failed": {
+      "missing_pitfall_file": 1
+    },
+    "skipped": {
+      "identical_and_issue_open": 1,
+      "repo_not_updated": 9
+    },
+    "updated_by_comment": {
+      "changed_and_issue_open": 1
+    }
+  },
+  "reason_code_percentages_by_action": {
+    "failed": {
+      "missing_pitfall_file": 100.0
+    },
+    "skipped": {
+      "identical_and_issue_open": 10.0,
+      "repo_not_updated": 90.0
+    },
+    "updated_by_comment": {
+      "changed_and_issue_open": 100.0
+    }
+  },
+  "pitfalls_per_repository": 1.1666666666666667,
+  "warnings_per_repository": 1.1666666666666667,
+  "issues_created_per_repository": 0.0
+}
