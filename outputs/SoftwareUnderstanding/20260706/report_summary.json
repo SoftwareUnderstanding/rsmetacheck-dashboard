@@ -1,4 +1,15 @@
 {
+  "tool_metadata": {
+    "sw_metadata_bot_version": "0.5.3",
+    "rsmetacheck_version": "0.2.1"
+  },
+  "run_metadata": {
+    "generated_at": "2026-07-06T14:16:55Z",
+    "dry_run": true,
+    "analysis_summary_file": "/home/francois/repos/github.com/codemetasoft/sw-metadata-bot-monitor-web/outputs/SoftwareUnderstanding/20260706/analysis_results.json",
+    "previous_report_source": "/home/francois/repos/github.com/codemetasoft/sw-metadata-bot-monitor-web/outputs/SoftwareUnderstanding/20260703/run_report.json",
+    "input_config_file": "/home/francois/repos/github.com/codemetasoft/sw-metadata-bot-monitor-web/input/config.json"
+  },
   "repository_count": 37,
   "pitfalls_by_id": {
     "P001": 6,

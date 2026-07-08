@@ -1,4 +1,17 @@
 {
+  "tool_metadata": {
+    "sw_metadata_bot_version": "0.4.3",
+    "rsmetacheck_version": "0.2.1"
+  },
+  "run_metadata": {
+    "generated_at": "2026-05-22T06:24:22Z",
+    "dry_run": false,
+    "analysis_summary_file": "20260522/analysis_results.json",
+    "previous_report_source": "20260505/run_report.json",
+    "published_at": "2026-05-22T06:24:22Z",
+    "idempotency_skipped_records": 0,
+    "failed_retry_skipped_records": 2
+  },
   "repository_count": 36,
   "pitfalls_by_id": {
     "P001": 8,
