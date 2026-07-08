@@ -53,6 +53,14 @@ publish:
 		"$$PYTHON_BIN" -m sw_metadata_bot.main publish --analysis-root "$$LATEST_SUBFOLDER"; \
 	fi
 
+generate_summary:
+	@echo "Generating summary..."
+	if command -v uv >/dev/null 2>&1 && [ -d ".venv" ]; then \
+		if [ -z "$$LATEST_SUBFOLDER" ]; then echo "Error: No snapshot folder found under $$OUTPUT_DIR"; exit 1; fi; \
+		uv run sw-metadata-bot publish --analysis-root "$$LATEST_SUBFOLDER"; \
+	else \
+		@echo "[not implemented when not using uv]"
+
 generate_landing_page:
 	@echo "Generating landing page..."
 	if command -v uv >/dev/null 2>&1 && [ -d ".venv" ]; then \
