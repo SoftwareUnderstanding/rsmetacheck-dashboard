@@ -1,6 +1,6 @@
-# sw-metadata-bot-monitor-web
+# rsmetacheck-dashboard
 
-A website to display the results of running the sw metadata bot on different organizations
+A website to display the results of running rsmetacheck on different organizations
 
 ## Installation
 
@@ -16,7 +16,7 @@ This creates/updates `.venv` and installs all project dependencies from `pyproje
 
 ```bash
 python -m pip install --upgrade pip
-python -m pip install "pystache>=0.6.8" "sw-metadata-bot>=0.4.1"
+python -m pip install "pystache>=0.6.8" "rsmetacheck>=0.3.1" "sw-metadata-bot>=0.4.3"
 ```
 
 If you prefer isolated environments, create and activate a virtual environment first:
@@ -25,7 +25,7 @@ If you prefer isolated environments, create and activate a virtual environment f
 python -m venv .venv
 source .venv/bin/activate
 python -m pip install --upgrade pip
-python -m pip install "pystache>=0.6.8" "sw-metadata-bot>=0.4.1"
+python -m pip install "pystache>=0.6.8" "rsmetacheck>=0.3.1" "sw-metadata-bot>=0.4.3"
 ```
 
 ## Running Analysis and Updating the Dashboard
@@ -41,7 +41,7 @@ The script now supports two modes automatically:
 1. `uv` mode when both `uv` and `.venv/` are available
 2. `pip` fallback mode when `uv` is not available or `.venv/` does not exist
 
-In fallback mode, it installs required Python dependencies (`sw-metadata-bot`, `pystache`) with `pip` before running.
+In fallback mode, it installs required Python dependencies (`rsmetacheck`, `sw-metadata-bot`, `pystache`) with `pip` before running.
 
 ## Generating Only the Landing Page
 

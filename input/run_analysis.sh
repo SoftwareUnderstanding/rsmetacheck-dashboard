@@ -28,11 +28,11 @@ else
 	fi
 
 	"$PYTHON_BIN" -m pip install --upgrade pip
-	"$PYTHON_BIN" -m pip install "pystache>=0.6.8" "sw-metadata-bot>=0.4.1"
+	"$PYTHON_BIN" -m pip install "pystache>=0.6.8" "rsmetacheck>=0.3.1" "sw-metadata-bot>=0.4.3"
 fi
 
 if [ "$USE_UV" = true ]; then
-	uv run sw-metadata-bot run-analysis --config-file "$CONFIG_FILE"
+	uv run --with sw-metadata-bot sw-metadata-bot run-analysis --config-file "$CONFIG_FILE"
 else
 	"$PYTHON_BIN" -m sw_metadata_bot.main run-analysis --config-file "$CONFIG_FILE"
 fi
@@ -55,7 +55,7 @@ if [ -z "${LATEST_SUBFOLDER:-}" ]; then
 fi
 
 if [ "$USE_UV" = true ]; then
-	uv run sw-metadata-bot publish --analysis-root "$LATEST_SUBFOLDER"
+	uv run --with sw-metadata-bot sw-metadata-bot publish --analysis-root "$LATEST_SUBFOLDER"
 else
 	"$PYTHON_BIN" -m sw_metadata_bot.main publish --analysis-root "$LATEST_SUBFOLDER"
 fi
