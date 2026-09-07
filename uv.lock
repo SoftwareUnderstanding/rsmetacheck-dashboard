@@ -5850,34 +5850,18 @@ wheels = [
 ]
 
 [[package]]
-name = "sw-metadata-bot"
-version = "0.4.3"
-source = { registry = "https://pypi.org/simple" }
-dependencies = [
-    { name = "click" },
-    { name = "python-dotenv" },
-    { name = "requests" },
-    { name = "rsmetacheck" },
-    { name = "setuptools", extra = ["test"] },
-]
-sdist = { url = "https://files.pythonhosted.org/packages/45/eb/bebf0839493e6d0e48347c14193dcddfa756669644c3dd8861fd66cfaa58/sw_metadata_bot-0.4.3.tar.gz", hash = "sha256:819fcd8bd08e1ae19cf866cf6241ba48a31d4f29ca014676fbcde181af7cb5a9", size = 54364, upload-time = "2026-05-05T13:23:07.45Z" }
-wheels = [
-    { url = "https://files.pythonhosted.org/packages/4d/5a/2332ffb9b7d312305e367dddac1b205cacb1eebb4b05337b7e09f4272f95/sw_metadata_bot-0.4.3-py3-none-any.whl", hash = "sha256:cc64c95d0f07d6d170ee2c4e8c59c8c7fab00b8db87785818ee9acc45327e86b", size = 47480, upload-time = "2026-05-05T13:23:05.662Z" },
-]
-
-[[package]]
-name = "sw-metadata-bot-monitor-web"
+name = "rsmetacheck-dashboard"
 version = "0.1.0"
 source = { virtual = "." }
 dependencies = [
     { name = "pystache" },
-    { name = "sw-metadata-bot" },
+    { name = "rsmetacheck" },
 ]
 
 [package.metadata]
 requires-dist = [
     { name = "pystache", specifier = ">=0.6.8" },
-    { name = "sw-metadata-bot", specifier = ">=0.4.3" },
+    { name = "rsmetacheck", specifier = ">=0.3.1" },
 ]
 
 [[package]]

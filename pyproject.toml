@@ -1,10 +1,10 @@
 [project]
-name = "sw-metadata-bot-monitor-web"
+name = "rsmetacheck-dashboard"
 version = "0.1.0"
-description = "Landing page to host sw-metadata-bot monitoring information"
+description = "Landing page to host rsmetacheck monitoring information"
 readme = "README.md"
 requires-python = ">=3.11"
 dependencies = [
     "pystache>=0.6.8",
-    "sw-metadata-bot>=0.4.3",
+    "rsmetacheck>=0.3.1",
 ]
