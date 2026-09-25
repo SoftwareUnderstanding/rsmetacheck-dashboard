@@ -1,10 +1,10 @@
 [project]
 name = "rsmetacheck-dashboard"
-version = "0.1.0"
-description = "Landing page to host rsmetacheck monitoring information"
+version = "0.2.0"
+description = "Landing page to host rsmetacheck-bot monitoring information"
 readme = "README.md"
 requires-python = ">=3.11"
 dependencies = [
     "pystache>=0.6.8",
-    "rsmetacheck>=0.3.1",
+    "rsmetacheck-bot>=0.6.0",
 ]
